@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>1041541294384-sl7bbj2tlh1dgn6dr334bgglc8b0ut5u.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1041541294384-sl7bbj2tlh1dgn6dr334bgglc8b0ut5u</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD7mT-jGx2IBQM82c75U2HmFFSUNL_0SpU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1041541294384</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.emredogan.bikefinder</string>
+	<key>PROJECT_ID</key>
+	<string>bikefinder-179dc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bikefinder-179dc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1041541294384:ios:a598dfa8d637fc2b</string>
+	<key>DATABASE_URL</key>
+	<string>https://bikefinder-179dc.firebaseio.com</string>
+</dict>
+</plist>

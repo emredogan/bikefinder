@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29C106203035981C1E812780 /* Pods_BikeFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8346A9690CC8CA732A8A7FD /* Pods_BikeFinder.framework */; };
 		63CE4D381F3E367F00B42F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE4D371F3E367F00B42F2C /* AppDelegate.swift */; };
 		63CE4D3A1F3E367F00B42F2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE4D391F3E367F00B42F2C /* ViewController.swift */; };
 		63CE4D3D1F3E367F00B42F2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CE4D3B1F3E367F00B42F2C /* Main.storyboard */; };
-		63CE4D3F1F3E367F00B42F2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CE4D3E1F3E367F00B42F2C /* Assets.xcassets */; };
+		63CE4D3F1F3E367F00B42F2C /*  .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CE4D3E1F3E367F00B42F2C /*  .xcassets */; };
 		63CE4D421F3E367F00B42F2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CE4D401F3E367F00B42F2C /* LaunchScreen.storyboard */; };
+		63CE4D4A1F3E36B500B42F2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CE4D491F3E36B500B42F2C /* GoogleService-Info.plist */; };
+		63CE4D4F1F3E44DE00B42F2C /* BikeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE4D4E1F3E44DE00B42F2C /* BikeAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,9 +22,14 @@
 		63CE4D371F3E367F00B42F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63CE4D391F3E367F00B42F2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		63CE4D3C1F3E367F00B42F2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		63CE4D3E1F3E367F00B42F2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63CE4D3E1F3E367F00B42F2C /*  .xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = " .xcassets"; sourceTree = "<group>"; };
 		63CE4D411F3E367F00B42F2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63CE4D431F3E367F00B42F2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63CE4D491F3E36B500B42F2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		63CE4D4E1F3E44DE00B42F2C /* BikeAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeAnnotation.swift; sourceTree = "<group>"; };
+		C5AAC61DA59174C76A62F3A8 /* Pods-BikeFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeFinder/Pods-BikeFinder.release.xcconfig"; sourceTree = "<group>"; };
+		C8346A9690CC8CA732A8A7FD /* Pods_BikeFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEB7CBF85682A071EA63E86D /* Pods-BikeFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeFinder/Pods-BikeFinder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C106203035981C1E812780 /* Pods_BikeFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				63CE4D361F3E367E00B42F2C /* BikeFinder */,
 				63CE4D351F3E367E00B42F2C /* Products */,
+				BD367B7AA56988405C02B629 /* Pods */,
+				8A54C514CAAAECF50730A71F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +65,49 @@
 		63CE4D361F3E367E00B42F2C /* BikeFinder */ = {
 			isa = PBXGroup;
 			children = (
+				63CE4D4D1F3E44B900B42F2C /* Model */,
+				63CE4D4C1F3E44B100B42F2C /* Controller */,
 				63CE4D371F3E367F00B42F2C /* AppDelegate.swift */,
-				63CE4D391F3E367F00B42F2C /* ViewController.swift */,
 				63CE4D3B1F3E367F00B42F2C /* Main.storyboard */,
-				63CE4D3E1F3E367F00B42F2C /* Assets.xcassets */,
+				63CE4D3E1F3E367F00B42F2C /*  .xcassets */,
 				63CE4D401F3E367F00B42F2C /* LaunchScreen.storyboard */,
 				63CE4D431F3E367F00B42F2C /* Info.plist */,
+				63CE4D491F3E36B500B42F2C /* GoogleService-Info.plist */,
 			);
 			path = BikeFinder;
+			sourceTree = "<group>";
+		};
+		63CE4D4C1F3E44B100B42F2C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				63CE4D391F3E367F00B42F2C /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		63CE4D4D1F3E44B900B42F2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63CE4D4E1F3E44DE00B42F2C /* BikeAnnotation.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8A54C514CAAAECF50730A71F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8346A9690CC8CA732A8A7FD /* Pods_BikeFinder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD367B7AA56988405C02B629 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EEB7CBF85682A071EA63E86D /* Pods-BikeFinder.debug.xcconfig */,
+				C5AAC61DA59174C76A62F3A8 /* Pods-BikeFinder.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +117,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63CE4D461F3E367F00B42F2C /* Build configuration list for PBXNativeTarget "BikeFinder" */;
 			buildPhases = (
+				69561DEA57D564C6AA38C0B5 /* [CP] Check Pods Manifest.lock */,
 				63CE4D301F3E367E00B42F2C /* Sources */,
 				63CE4D311F3E367E00B42F2C /* Frameworks */,
 				63CE4D321F3E367E00B42F2C /* Resources */,
+				111CB01FB60285A43EC07397 /* [CP] Embed Pods Frameworks */,
+				75BF790B7BC9A26C65BB301E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,12 +174,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				63CE4D421F3E367F00B42F2C /* LaunchScreen.storyboard in Resources */,
-				63CE4D3F1F3E367F00B42F2C /* Assets.xcassets in Resources */,
+				63CE4D4A1F3E36B500B42F2C /* GoogleService-Info.plist in Resources */,
+				63CE4D3F1F3E367F00B42F2C /*  .xcassets in Resources */,
 				63CE4D3D1F3E367F00B42F2C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		111CB01FB60285A43EC07397 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeFinder/Pods-BikeFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69561DEA57D564C6AA38C0B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75BF790B7BC9A26C65BB301E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeFinder/Pods-BikeFinder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63CE4D301F3E367E00B42F2C /* Sources */ = {
@@ -138,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63CE4D3A1F3E367F00B42F2C /* ViewController.swift in Sources */,
+				63CE4D4F1F3E44DE00B42F2C /* BikeAnnotation.swift in Sources */,
 				63CE4D381F3E367F00B42F2C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,12 +358,13 @@
 		};
 		63CE4D471F3E367F00B42F2C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEB7CBF85682A071EA63E86D /* Pods-BikeFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BH7ATPEKS6;
 				INFOPLIST_FILE = BikeFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.emredogan.BikeFinder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.emredogan.bikefinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -272,12 +372,13 @@
 		};
 		63CE4D481F3E367F00B42F2C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5AAC61DA59174C76A62F3A8 /* Pods-BikeFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BH7ATPEKS6;
 				INFOPLIST_FILE = BikeFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.emredogan.BikeFinder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.emredogan.bikefinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -302,6 +403,7 @@
 				63CE4D481F3E367F00B42F2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
