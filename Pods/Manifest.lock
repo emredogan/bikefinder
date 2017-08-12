@@ -26,11 +26,13 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SCLAlertView (0.7.0)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - GeoFire (from `https://github.com/firebase/geofire-objc.git`)
+  - SCLAlertView
 
 EXTERNAL SOURCES:
   GeoFire:
@@ -50,7 +52,8 @@ SPEC CHECKSUMS:
   GeoFire: 02f02683e09367c2eee073c6b09c794da19833ee
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
 
-PODFILE CHECKSUM: 64897cd17339c7ef5c2179e18bc857181d70e5d1
+PODFILE CHECKSUM: c868f3d524250e161d3438b9988b393e7ab08c4b
 
 COCOAPODS: 1.2.0

@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SCLAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,17 +37,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5C8ED6370D1F9BCD0DC9F8F2ED2F258F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>65EE809A7D88E2F78DCB5BEEB79A6C3A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6D17B4D0D8A5264FE67417A94F604D75</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C0D8BFA72D5D8C9FFC99A45232DD99B1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D9DC39BADCAAB8AD2AAE9A553BC952BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -31,7 +31,7 @@
                                     <constraint firstAttribute="height" constant="60" id="QWI-bx-5Rf"/>
                                     <constraint firstAttribute="width" constant="60" id="h6c-8L-ZwC"/>
                                 </constraints>
-                                <state key="normal" image="bikerental-icon"/>
+                                <state key="normal" image="addbtn"/>
                                 <connections>
                                     <action selector="spotRandomBikes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RTj-S8-ose"/>
                                 </connections>
@@ -71,7 +71,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bikerental-icon" width="500" height="500"/>
+        <image name="addbtn" width="600" height="598"/>
         <image name="location" width="200" height="200"/>
     </resources>
 </document>
