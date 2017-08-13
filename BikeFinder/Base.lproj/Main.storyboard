@@ -33,7 +33,7 @@
                                 </constraints>
                                 <state key="normal" image="addbtn"/>
                                 <connections>
-                                    <action selector="spotRandomBikes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RTj-S8-ose"/>
+                                    <action selector="spotBikes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r7t-F5-ZqE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kt6-7w-WVI">
@@ -45,7 +45,18 @@
                                 <state key="normal" image="location"/>
                                 <connections>
                                     <action selector="showUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1yA-RI-QdU"/>
-                                    <action selector="spotRandomBikes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J94-VL-0Yg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCJ-fQ-iVr">
+                                <rect key="frame" x="283" y="36" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="C0X-KT-f6n"/>
+                                    <constraint firstAttribute="width" constant="60" id="XAu-3V-bNM"/>
+                                </constraints>
+                                <state key="normal" image="remove"/>
+                                <connections>
+                                    <action selector="removeAllBikes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Ac-hf-zBm"/>
+                                    <action selector="showUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fc0-US-uHA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -57,7 +68,9 @@
                             <constraint firstAttribute="trailing" secondItem="3gT-sm-0JY" secondAttribute="trailing" id="OLQ-Yo-ZZG"/>
                             <constraint firstAttribute="bottom" secondItem="E3J-N0-4bz" secondAttribute="bottom" constant="16" id="b2e-Zi-uqW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kt6-7w-WVI" secondAttribute="trailing" constant="16" id="fyo-di-Nlr"/>
+                            <constraint firstItem="dCJ-fQ-iVr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="iT3-W1-xcz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3gT-sm-0JY" secondAttribute="bottom" id="iZc-6D-L5m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dCJ-fQ-iVr" secondAttribute="trailing" constant="16" id="jep-8t-NRf"/>
                             <constraint firstItem="3gT-sm-0JY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pyp-NF-m0y"/>
                         </constraints>
                     </view>
@@ -73,5 +86,6 @@
     <resources>
         <image name="addbtn" width="600" height="598"/>
         <image name="location" width="200" height="200"/>
+        <image name="remove" width="256" height="256"/>
     </resources>
 </document>
