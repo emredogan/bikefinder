@@ -20,11 +20,16 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var mapHasCenteredOnce = false
     let geoCoder = CLGeocoder()
     
+    var locationArray = [String]()
+    
+    
+    
     @IBOutlet weak var mapView: MKMapView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         
         
@@ -46,10 +51,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         imageView.image = resizeImage(image: pinImage!, newWidth: 50)
         
-    //    imageView.frame = CGRect(x: 100, y: 100, width: 10, height: 10)
-        
-        
-        
         imageView.backgroundColor = UIColor.clear
         imageView.contentMode = UIViewContentMode.center
         
@@ -62,14 +63,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         locationAuthStatus()
-    }
+        
+        
+            }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
@@ -84,11 +83,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        
-        
-        let userLocationView = self.mapView(mapView, viewFor: userLocation)
-        userLocationView?.superview?.bringSubview(toFront: userLocationView!)
-        
         
         
         if let loc = userLocation.location {
@@ -151,7 +145,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             
             formatAnnotation(pinView: annotationView, forMapView: mapView)
             annotationView.canShowCallout = false
-       //     annotationView.image = UIImage(named: "\(anno.bikeNumber)")
+       //     annotationView.image = UIImage(named: "\(anno.bikeNumber)") - IF YOU HAVE DIFFERENT KIND OF BIKES
             
             annotationView.image = UIImage(named: "1.png")
             
@@ -264,36 +258,21 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 let options = [MKLaunchOptionsMapCenterKey: NSValue (mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span), MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking] as [String : Any]
                 
                 MKMapItem.openMaps(with: [destination], launchOptions: options)
-                print("Second button tapped")
             }
             
             alertView.addButton("Driving") {
                 let options = [MKLaunchOptionsMapCenterKey: NSValue (mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span), MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving] as [String : Any]
                 
                 MKMapItem.openMaps(with: [destination], launchOptions: options)
-                print("Second button tapped")
             }
             
             alertView.addButton("Public Transport") {
                 let options = [MKLaunchOptionsMapCenterKey: NSValue (mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span), MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeTransit] as [String : Any]
                 
                 MKMapItem.openMaps(with: [destination], launchOptions: options)
-                print("Second button tapped")
             }
             
-//            alertView.addButton("Remove Bike") {
-//                let allAnnotations = self.mapView.annotations
-//                
-//                for _annotation in allAnnotations {
-//                    if let annotation = _annotation as? MKAnnotation
-//                    {
-//                        self.mapView.removeAnnotation(annotation)
-//                        self.geoFire.removeKey("1")
-//                    }
-//                }
-//                
-//                
-//            }
+
             
             
         }
@@ -323,7 +302,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             scale = 0.23
         }
         
-        print("EMREDOGAN \(scale)")
         
         pinView.transform = CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale))
         
@@ -333,14 +311,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     
         func mapView(_ mapView: MKMapView, regionWillChangeAnimated: Bool) {
-            let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
-            
-            showBikesOnMap(location: loc)
-            
-        
+
             
             
-            //ACTIVATE THIS PART IF YOU WANT TO MAKE ICONS DISAPPEAR FOR CERTAIN DISTANCES
+            //ACTIVATE THIS PART IF YOU WANT TO MAKE ANNOTATIONS DISAPPEAR FOR CERTAIN DISTANCES
             
 //            let annotations = self.mapView.annotations
 //            
@@ -376,47 +350,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 //            }
         }
     
-//    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-//        let annotations = self.mapView.annotations
-//        
-//        for annotation in annotations
-//        {
-//            if (self.mapView.region.span.latitudeDelta > 0.010)
-//            {
-//                
-//                self.mapView.view(for: annotation)?.isHidden = true
-//                
-//            }
-//            else {
-//                
-//                self.mapView.view(for: annotation)?.isHidden = false
-//                
-//            }
-//        }
-//    }
-    
-    
-    
-        
-        
-        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-            
-            
-            if let anno =  view.annotation as? BikeAnnotation {
-                let place = MKPlacemark(coordinate: anno.coordinate)
-                let destination = MKMapItem(placemark: place)
-                destination.name = "Bike Sighting"
-                let regionDistance: CLLocationDistance = 1000
-                let regionSpan = MKCoordinateRegionMakeWithDistance(anno.coordinate, regionDistance, regionDistance)
-                
-                let options = [MKLaunchOptionsMapCenterKey: NSValue (mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span), MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking] as [String : Any]
-                
-                MKMapItem.openMaps(with: [destination], launchOptions: options)
-                
-                
-            }
-            
-        }
     
     
     
@@ -450,7 +383,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     
     
-    @IBAction func spotBikes(_ sender: Any) {
+    @IBAction func addBikes(_ sender: Any) {
         
         let location = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
         
@@ -476,33 +409,56 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     
     func createSighting(forLocation location: CLLocation, withBike bikeID: Int) {
+        
+        
+        
     
-        geoFire.setLocation(location, forKey: "\(bikeID)")
+        geoFire.setLocation(location, forKey: "1") { (error) in
+            if (error != nil) {
+                print("An error occured: \(error)")
+            } else {
+                print("Saved location successfully!")
+                
+            }
+        }
         
         print("EMRE: Sight created")
+        let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+        
+        showBikesOnMap(location: loc)
     }
     
     func showBikesOnMap(location: CLLocation) {
-        print("000")
         let circleQuery = geoFire!.query(at: location, withRadius: 2.5)
         
         _ = circleQuery?.observe(GFEventType.keyEntered, with: { (key, location) in
-            print("1111")
+            
+            
             
             
             if let key = key, let location = location {
+                
+                
+                
+                
                 let anno = BikeAnnotation(coordinate: location.coordinate, bikeNumber: Int(key)!)
                 
                 DispatchQueue.main.async {
-                    self.mapView.addAnnotation(anno)
+                    
+                        self.mapView.addAnnotation(anno)
+                    
+                    
+                    
+                    
                 }
                 
                 
                 
-                print("2222")
             }
         })
     }
+    
+    
     
     func locationAuthStatus() {
         
