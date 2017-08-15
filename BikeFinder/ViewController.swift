@@ -20,9 +20,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var mapHasCenteredOnce = false
     let geoCoder = CLGeocoder()
     
-    var locationArray = [String]()
-    
-    
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -31,20 +28,45 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         super.viewDidLoad()
         
         
-        
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
         mapView.delegate = self
         mapView.userTrackingMode = MKUserTrackingMode.follow
         
         geoFireRef = Database.database().reference()
-        geoFire = GeoFire(firebaseRef: geoFireRef)
+        geoFire = GeoFire(firebaseRef: geoFireRef) // initalize Geofire
         
         
-        let pinImage = UIImage(named: "1.png")
+        createIconOnCenter()
+        
+        
+    }
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+        locationAuthStatus()
+        
+        
+            }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) { // When we get auth from the user, show user location
+        if status == .authorizedWhenInUse {
+            mapView.showsUserLocation = true
+        }
+    }
+    
+    func locationAuthStatus() {
+        
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            mapView.showsUserLocation = true
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        
+    }
+    
+    func createIconOnCenter() {
+        
+        let pinImage = UIImage(named: "pin.png")
         let imageView = UIImageView()
-        
         
         
         
@@ -61,19 +83,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.view.addSubview(imageView)
         
         
-    }
-
-    
-    override func viewDidAppear(_ animated: Bool) {
-        locationAuthStatus()
-        
-        
-            }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            mapView.showsUserLocation = true
-        }
     }
     
     func centerMapOnLocation(location: CLLocation) {
@@ -132,6 +141,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         } else if let deqAnno = mapView.dequeueReusableAnnotationView(withIdentifier: annoIdentifier) {
             annotationView = deqAnno
             annotationView?.annotation = annotation
+            print("Annotation is reused")
         }
         else {
             let av = MKAnnotationView(annotation: annotation, reuseIdentifier: annoIdentifier)
@@ -147,7 +157,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             annotationView.canShowCallout = false
        //     annotationView.image = UIImage(named: "\(anno.bikeNumber)") - IF YOU HAVE DIFFERENT KIND OF BIKES
             
-            annotationView.image = UIImage(named: "1.png")
+            annotationView.image = UIImage(named: "pin.png")
             
         
         
@@ -460,15 +470,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     
     
-    func locationAuthStatus() {
-        
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            mapView.showsUserLocation = true
-        } else {
-            locationManager.requestWhenInUseAuthorization()
-        }
-        
-    }
+    
     
 
 

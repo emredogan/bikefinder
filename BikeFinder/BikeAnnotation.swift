@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-let bike = ["city","race","family","mountain","tandem"]
+//let bike = ["city","race","family","mountain","tandem"]
 
 class BikeAnnotation: NSObject, MKAnnotation {
     
@@ -26,8 +26,8 @@ class BikeAnnotation: NSObject, MKAnnotation {
     init(coordinate: CLLocationCoordinate2D, bikeNumber: Int) {
         self.coordinate = coordinate
         self.bikeNumber = bikeNumber
-        self.bikeName = bike[bikeNumber - 1].capitalized
+     //   self.bikeName = bike[bikeNumber - 1].capitalized
+        self.bikeName = "city"
         self.title = self.bikeName
-        print("BIKENAME")
     }
 }
