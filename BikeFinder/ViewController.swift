@@ -35,6 +35,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         geoFire = GeoFire(firebaseRef: geoFireRef) // initalize Geofire
         
         
+        segmentedControl.layer.cornerRadius = 4.0
+        segmentedControl.clipsToBounds = true
+        
         createIconOnCenter()
         
         
@@ -402,6 +405,21 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         createSighting(forLocation: location, withBike: Int(rand))
         
     }
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    @IBAction func changeMapType(_ sender: UISegmentedControl!) {
+        
+        switch (sender.selectedSegmentIndex) {
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .satellite
+        default:
+            mapView.mapType = .standard
+        }
+    }
+    
+    
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
         
